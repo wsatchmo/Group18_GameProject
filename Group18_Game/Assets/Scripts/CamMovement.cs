@@ -2,6 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+* Author: [Ben]
+* Date Created: [11/22/2024]
+* Date Edited: [12/3/2024]
+* [Handles the camera object within the player]
+*/
+
 public class CamMovement : MonoBehaviour
 {
     Vector2 mouseLook;
