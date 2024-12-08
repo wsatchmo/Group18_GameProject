@@ -438,6 +438,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sensitivity: 5
   smoothing: 2
+  bulletSpeed: 0
+  bulletPrefab: {fileID: 705351310130236409, guid: 924d73f1b1f73b24cb8c8f17c7dac5ec, type: 3}
 --- !u!1 &900603693
 GameObject:
   m_ObjectHideFlags: 0

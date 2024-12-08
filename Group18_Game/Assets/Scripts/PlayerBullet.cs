@@ -5,7 +5,7 @@ using UnityEngine;
 //float value for camera y
 
 //both to be updated within update function
-
+//delete
 public class PlayerBullet : MonoBehaviour
 {
     public float cameraX;
