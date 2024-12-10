@@ -6,7 +6,7 @@ using UnityEngine;
  * Author: [Satcher, Will]
  * Date created: [12/8/2024]
  * Date edited: [12/8/2024]
- * [Handles spawning of prefabs]
+ * [Handles spawning of target prefabs]
  */
 
 public class TargetHard : MonoBehaviour

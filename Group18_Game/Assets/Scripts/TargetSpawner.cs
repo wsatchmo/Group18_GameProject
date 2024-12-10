@@ -40,6 +40,16 @@ public class TargetSpawner : MonoBehaviour
         {
             projectile3.GetComponent<TargetHard>().goingLeft = goingLeft;
         }
+        GameObject projectile4 = Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
+        if (projectile4.GetComponent<PowerSize>())
+        {
+            projectile4.GetComponent<PowerSize>().goingLeft = goingLeft;
+        }
+        GameObject projectile5 = Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
+        if (projectile5.GetComponent<PowerAmt>())
+        {
+            projectile5.GetComponent<PowerAmt>().goingLeft = goingLeft;
+        }
     }
 
 

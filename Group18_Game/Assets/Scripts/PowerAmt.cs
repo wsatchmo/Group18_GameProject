@@ -4,14 +4,14 @@ using UnityEngine;
 
 /*
  * Author: [Satcher, Will]
- * Date created: [12/8/2024]
- * Date edited: [12/8/2024]
- * [Handles spawning of target prefabs]
+ * Date created: [12/10/2024]
+ * Date edited: [12/10/2024]
+ * [Handles spawning of powerup]
  */
 
-public class TargetBasic : MonoBehaviour
-{
 
+public class PowerAmt : MonoBehaviour
+{
     [Header("Projectile Variables")]
     public float speed;
     public bool goingLeft;

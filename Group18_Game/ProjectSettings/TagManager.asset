@@ -7,6 +7,9 @@ TagManager:
   - TargetBasic
   - TargetMedium
   - TargetHard
+  - Bullet
+  - PowerSize
+  - PowerAmt
   layers:
   - Default
   - TransparentFX
