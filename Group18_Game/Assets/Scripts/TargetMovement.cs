@@ -13,16 +13,7 @@ using UnityEngine;
 public class TargetMovement : MonoBehaviour
 {
 
-
-    // make it so that targets move in different ways configurable in unity ui
-    // randomize speed and direction in some cases
-    // make some zig-zag and some go straight; some go back and forth and some only go across
-    // some should be close and some should be far away
-    // make sure they count as hit targets, some count for different amounts
-    // make sure there is a boundary where they disappear
-    // players lose points if they hit birds
-    // plan to configure what happens when shooting a power up (will be partly in player or bullet script)
-
+   
 
     // Start is called before the first frame update
     void Start()
