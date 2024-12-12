@@ -19,7 +19,7 @@ public class TargetBasic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (goingLeft == true)
+        if (goingLeft)
         {
             transform.position += speed * Vector3.left * Time.deltaTime;
         }
@@ -28,6 +28,6 @@ public class TargetBasic : MonoBehaviour
             transform.position += speed * Vector3.right * Time.deltaTime;
         }
 
-        Destroy(gameObject, 5);
+        Destroy(gameObject, 15);
     }
 }

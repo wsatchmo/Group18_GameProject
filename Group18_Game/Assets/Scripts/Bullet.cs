@@ -5,7 +5,15 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
 
-    public int points;
+    public Player Player;
+    //public GameObject Gun;
+
+
+
+    private void Start()
+    {
+        //GameObject gunInstance = Instantiate(Gun);
+    }
 
     private void Update()
     {
@@ -21,7 +29,6 @@ public class Bullet : MonoBehaviour
         Destroy(gameObject, 5);
     }
 
-
     /// <summary>
     /// Detect collisions using a trigger event.
     /// </summary>
@@ -31,17 +38,17 @@ public class Bullet : MonoBehaviour
         if (other.gameObject.tag == "TargetBasic")
         {
             other.gameObject.SetActive(false);
-            points++;
+            Player.points++;
         }
         if (other.gameObject.tag == "TargetMedium")
         {
             other.gameObject.SetActive(false);
-            points += 3;
+            Player.points += 3;
         }
         if (other.gameObject.tag == "TargetHard")
         {
             other.gameObject.SetActive(false);
-            points += 5;
+            Player.points += 5;
             //StartCoroutine(Stun());
         }
         if (other.gameObject.tag == "PowerAmt")
@@ -51,12 +58,13 @@ public class Bullet : MonoBehaviour
         if (other.gameObject.tag == "PowerSize")
         {
             other.gameObject.SetActive(false);
+            //Gun.BulletResize();
+            //Spawner gs = Gun.GetComponent<Spawner>();
+            //gs.StartCoroutine(gs.BulletResize());
+
         }
-
-
-
-
-       
     }
+
+
 
 }

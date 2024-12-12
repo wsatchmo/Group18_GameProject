@@ -12,9 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/BenScene.unity
     guid: 3dcf5ae80fc99af418e405f1be6a650f
   - enabled: 1
-    path: Assets/Scenes/WillScene.unity
-    guid: fcf3aaaf9fab04746baa3fc9a2041c4b
-  - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: 41e68ef148434b445bb31a68d4de1d1d
+  - enabled: 0
+    path: Assets/Scenes/WillScene.unity
+    guid: fcf3aaaf9fab04746baa3fc9a2041c4b
   m_configObjects: {}

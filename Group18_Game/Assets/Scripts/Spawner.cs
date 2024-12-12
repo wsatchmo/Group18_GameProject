@@ -13,6 +13,13 @@ public class Spawner : MonoBehaviour
 {
     private bool delayBetweenShots = false;
     public Rigidbody projectilePrefab;
+    public Rigidbody projectilePrefabBig;
+
+    //Powerups
+    public bool bulletBig = false;
+    public bool bulletAmt = false;
+
+    public Player Player;
 
     /// <summary>
     /// Called at fixed intervals at the same rate as the physics system (50/frame).
@@ -20,6 +27,12 @@ public class Spawner : MonoBehaviour
     private void FixedUpdate()
     {
         PlayerShoot();
+        Debug.Log(bulletBig);
+    }
+
+    private void Update()
+    {
+        
     }
 
     /// <summary>
@@ -31,7 +44,7 @@ public class Spawner : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Mouse0))
             {
-                Debug.Log("Firing.");
+                //Debug.Log("Firing.");
                 SpawnProjectile();
                 StartCoroutine(WaitToReload());
                 //rigidbody.MovePosition(transform.position + Vector3.left * speed * Time.deltaTime);
@@ -53,9 +66,29 @@ public class Spawner : MonoBehaviour
         delayBetweenShots = false;
     }
 
+    public void BulletResize()
+    {
+        StartCoroutine(PowerUpResize());
+    }
+
+    IEnumerator PowerUpResize()
+    {
+        bulletBig = true;
+        yield return new WaitForSeconds(5f);
+        bulletBig = false;
+    }
+
     public void SpawnProjectile()
     {
-        Rigidbody projectile = Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
-        projectile.velocity = transform.TransformDirection(Vector3.forward * 100);
+        if (bulletBig)
+        {
+            Rigidbody projectile = Instantiate(projectilePrefabBig, transform.position, projectilePrefabBig.transform.rotation);
+            projectile.velocity = transform.TransformDirection(Vector3.forward * 100);
+        }
+        else
+        {
+            Rigidbody projectile = Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
+            projectile.velocity = transform.TransformDirection(Vector3.forward * 100);
+        }  
     }
 }

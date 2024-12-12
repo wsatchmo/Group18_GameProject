@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3975499470694206477}
-  - component: {fileID: 7921267630372357970}
   - component: {fileID: 6729834966461613177}
+  - component: {fileID: -6745038543538465702}
   m_Layer: 0
-  m_Name: PowerSpeed
+  m_Name: PowerSpeedUp
   m_TagString: PowerAmt
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34,20 +34,6 @@ Transform:
   - {fileID: 799902056773458394}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7921267630372357970
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 13187352947828273}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 782c7f1cebe3a0d4a9cd059ed4f3670d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 3
-  goingLeft: 1
 --- !u!65 &6729834966461613177
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -69,6 +55,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.6057262, y: 2.906075, z: 1.0337248}
   m_Center: {x: -0.3601637, y: 0.19775325, z: -0.59176016}
+--- !u!114 &-6745038543538465702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 13187352947828273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d21bb946df9e7f47b5f8d57d61afe1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
+  goingUp: 1
 --- !u!1001 &906186507296669233
 PrefabInstance:
   m_ObjectHideFlags: 0

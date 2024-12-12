@@ -9,16 +9,21 @@ using UnityEngine;
  * [Handles spawning of prefab targets]
  */
 
+//make it so that each taget type is only called a certain amount of times
+
 public class TargetSpawner : MonoBehaviour
 {
     public bool goingLeft;
+    public bool goingUp;
     public float timeBetweenShots;
     public float startDelay;
     public GameObject projectilePrefab;
+    public int counter;
 
     // Start is called before the first frame update
     void Start()
     {
+
         InvokeRepeating("SpawnProjectile", startDelay, timeBetweenShots);
     }
 
@@ -29,27 +34,65 @@ public class TargetSpawner : MonoBehaviour
         if (projectile1.GetComponent<TargetBasic>())
         {
             projectile1.GetComponent<TargetBasic>().goingLeft = goingLeft;
+            if (--counter == 0) CancelInvoke("SpawnProjectile");
         }        
         GameObject projectile2 = Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
         if (projectile2.GetComponent<TargetMid>())
         {
             projectile2.GetComponent<TargetMid>().goingLeft = goingLeft;
+            if (--counter == 0) CancelInvoke("SpawnProjectile");
         }
         GameObject projectile3 = Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
         if (projectile3.GetComponent<TargetHard>())
         {
             projectile3.GetComponent<TargetHard>().goingLeft = goingLeft;
+            if (--counter == 0) CancelInvoke("SpawnProjectile");
         }
         GameObject projectile4 = Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
         if (projectile4.GetComponent<PowerSize>())
         {
             projectile4.GetComponent<PowerSize>().goingLeft = goingLeft;
+            if (--counter == 0) CancelInvoke("SpawnProjectile");
         }
         GameObject projectile5 = Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
         if (projectile5.GetComponent<PowerAmt>())
         {
             projectile5.GetComponent<PowerAmt>().goingLeft = goingLeft;
+            if (--counter == 0) CancelInvoke("SpawnProjectile");
         }
+        
+        //UP VARIATION
+        
+        GameObject projectile6 = Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
+        if (projectile6.GetComponent<TargetBasicUp>())
+        {
+            projectile6.GetComponent<TargetBasicUp>().goingUp = goingUp;
+            if (--counter == 0) CancelInvoke("SpawnProjectile");
+        }        
+        //GameObject projectile2 = Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
+        //if (projectile2.GetComponent<TargetMidUp>())
+        //{
+        //    projectile2.GetComponent<TargetMidUp>().goingUp = goingUp;
+        //    if (--counter == 0) CancelInvoke("SpawnProjectile");
+        //}
+        //GameObject projectile3 = Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
+        //if (projectile3.GetComponent<TargetHardUp>())
+        //{
+        //    projectile3.GetComponent<TargetHardUp>().goingUp = goingUp;
+        //    if (--counter == 0) CancelInvoke("SpawnProjectile");
+        //}
+        //GameObject projectile4 = Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
+        //if (projectile4.GetComponent<PowerSizeUp>())
+        //{
+        //    projectile4.GetComponent<PowerSizeUp>().goingUp = goingUp;
+        //    if (--counter == 0) CancelInvoke("SpawnProjectile");
+        //}
+        //GameObject projectile5 = Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
+        //if (projectile5.GetComponent<PowerAmtUp>())
+        //{
+        //    projectile5.GetComponent<PowerAmtUp>().goingUp = goingUp;
+        //    if (--counter == 0) CancelInvoke("SpawnProjectile");
+        //}
     }
 
 

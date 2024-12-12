@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5330546495172788197}
-  - component: {fileID: -1166386219057698627}
   - component: {fileID: 5863262078612225796}
+  - component: {fileID: -5106721598720738066}
   m_Layer: 0
-  m_Name: TargetHard
+  m_Name: TargetHardUp
   m_TagString: TargetHard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34,20 +34,6 @@ Transform:
   - {fileID: 8271856105199577021}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-1166386219057698627
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5415377371189566113}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d03726e7c58f954bb8a1fcd806c4f19, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 12
-  goingLeft: 1
 --- !u!65 &5863262078612225796
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -69,6 +55,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.8, y: 1.8, z: 0.8}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-5106721598720738066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5415377371189566113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58f2a7336264c404f8c13421405b8060, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 11
+  goingUp: 1
 --- !u!1001 &8449087360002179158
 PrefabInstance:
   m_ObjectHideFlags: 0

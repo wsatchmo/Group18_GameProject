@@ -10,6 +10,9 @@ using UnityEngine.SceneManagement;
 * [Handles Start Screen scene management]
 */
 
+//CHANGE THIS TO A LEVEL CHOOSING SCREEN
+//This and Game Over should allow players to choose level
+
 public class StartUI : MonoBehaviour
 {
     /// <summary>

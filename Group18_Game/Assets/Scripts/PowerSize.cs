@@ -27,6 +27,6 @@ public class PowerSize : MonoBehaviour
             transform.position += speed * Vector3.right * Time.deltaTime;
         }
 
-        Destroy(gameObject, 5);
+        Destroy(gameObject, 16);
     }
 }
