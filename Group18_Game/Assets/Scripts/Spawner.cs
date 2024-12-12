@@ -14,6 +14,7 @@ public class Spawner : MonoBehaviour
     private bool delayBetweenShots = false;
     public Rigidbody projectilePrefab;
     public Rigidbody projectilePrefabBig;
+    public Rigidbody projectileToSpawn;
 
     //Powerups
     public bool bulletBig = false;
@@ -72,22 +73,27 @@ public class Spawner : MonoBehaviour
 
     IEnumerator PowerUpResize()
     {
-        bulletBig = true;
+        projectileToSpawn = projectilePrefabBig;
         yield return new WaitForSeconds(5f);
-        bulletBig = false;
+        projectileToSpawn = projectilePrefab;
+    }    
+    public void BulletSpray()
+    {
+        delayBetweenShots = false;
+    }
+
+    IEnumerator PowerUpAmt()
+    {
+        bulletAmt = true;
+        yield return new WaitForSeconds(5f);
+        bulletAmt = false;
     }
 
     public void SpawnProjectile()
     {
-        if (bulletBig)
-        {
-            Rigidbody projectile = Instantiate(projectilePrefabBig, transform.position, projectilePrefabBig.transform.rotation);
-            projectile.velocity = transform.TransformDirection(Vector3.forward * 100);
-        }
-        else
-        {
-            Rigidbody projectile = Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
-            projectile.velocity = transform.TransformDirection(Vector3.forward * 100);
-        }  
+
+        Rigidbody projectile = Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
+        projectile.velocity = transform.TransformDirection(Vector3.forward * 100);
+        
     }
 }

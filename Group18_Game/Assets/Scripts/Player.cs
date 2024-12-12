@@ -14,14 +14,16 @@ using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
 
-    //Timer for each level
     public int points;
     public GameObject spawnPoint1;
     public GameObject spawnPoint2;
     public GameObject spawnPoint3;
     public GameObject spawnPoint4;
-    //Get points from bullet
-    public GameObject BulletPrefab;
+
+    public Spawner Spawner;
+    public bool bulletBig = false;
+    public bool bulletSpray = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -30,17 +32,46 @@ public class Player : MonoBehaviour
         StartCoroutine(LevelOne());
     }
 
+    //Resets points to 0
     private void ResetPoints()
     {
         points = 0;
     }
 
+    //Scoring system
     public void AddPoints(int score)
     {
         points += score;
         Debug.Log("Player's Score: " + points);
     }
 
+    public void BulletResize()
+    {
+            StartCoroutine(PowerUpResize());
+    }
+    IEnumerator PowerUpResize()
+    {
+        Spawner.BulletResize();
+        yield return new WaitForSeconds(5f);
+        bulletBig = false;
+    }
+
+    public void BulletSpray()
+    {
+        if (!bulletSpray)
+        {
+            bulletSpray = true;
+            StartCoroutine(PowerUpResize());
+        }
+    }
+    IEnumerator PowerUpSpray()
+    {
+        Spawner.BulletSpray();
+        yield return new WaitForSeconds(5f);
+        bulletBig = false;
+    }
+
+    //Timer for each level
     IEnumerator LevelOne()
     {
         yield return new WaitForSeconds(36f);

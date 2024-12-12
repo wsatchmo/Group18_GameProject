@@ -17,13 +17,16 @@ public class UIManager : MonoBehaviour
     public int points;
 
     public Player playerStats;
-    public TMP_Text timeText;
     public TMP_Text pointsText;
+
+    void Start()
+    {
+    }
 
     // Update is called once per frame
     void Update()
     {
-        timeText.text = "Time: ";
         pointsText.text = "Points: " + playerStats.points;
     }
+
 }

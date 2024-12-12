@@ -55,11 +55,12 @@ public class Bullet : MonoBehaviour
         }
         if (other.gameObject.tag == "PowerAmt")
         {
+            Gun.BulletSpray();
             other.gameObject.SetActive(false);
         }
         if (other.gameObject.tag == "PowerSize")
         {
-            Gun.bulletBig = true;
+            Gun.BulletResize();
             other.gameObject.SetActive(false);
             //Gun.BulletResize();
             //Spawner gs = Gun.GetComponent<Spawner>();
