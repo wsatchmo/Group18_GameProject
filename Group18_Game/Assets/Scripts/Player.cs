@@ -14,20 +14,31 @@ using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
 
-    //keep score here
-    //make a timer for each level [here or elsewhere???]
+    //Timer for each level
     public int points;
-    private Vector3 startPos;
     public GameObject spawnPoint1;
     public GameObject spawnPoint2;
     public GameObject spawnPoint3;
     public GameObject spawnPoint4;
+    //Get points from bullet
+    public GameObject BulletPrefab;
 
     // Start is called before the first frame update
     void Start()
     {
-        startPos = transform.position;
+        ResetPoints();
         StartCoroutine(LevelOne());
+    }
+
+    private void ResetPoints()
+    {
+        points = 0;
+    }
+
+    public void AddPoints(int score)
+    {
+        points += score;
+        Debug.Log("Player's Score: " + points);
     }
 
     IEnumerator LevelOne()
@@ -62,4 +73,6 @@ public class Player : MonoBehaviour
     {
        
     }
+
+
 }

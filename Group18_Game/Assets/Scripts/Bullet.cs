@@ -6,15 +6,17 @@ public class Bullet : MonoBehaviour
 {
 
     public Player Player;
-    //public GameObject Gun;
+    public Spawner Gun;
 
-
+    public int points;
 
     private void Start()
     {
-        //GameObject gunInstance = Instantiate(Gun);
+
     }
 
+    //continually move in same direction
+    //bullets are self-deleted after five seconds
     private void Update()
     {
         DestroyObjectDelayed();
@@ -38,17 +40,17 @@ public class Bullet : MonoBehaviour
         if (other.gameObject.tag == "TargetBasic")
         {
             other.gameObject.SetActive(false);
-            Player.points++;
+            Player.AddPoints(5);
         }
         if (other.gameObject.tag == "TargetMedium")
         {
             other.gameObject.SetActive(false);
-            Player.points += 3;
+            Player.AddPoints(10);
         }
         if (other.gameObject.tag == "TargetHard")
         {
             other.gameObject.SetActive(false);
-            Player.points += 5;
+            Player.AddPoints(15);
             //StartCoroutine(Stun());
         }
         if (other.gameObject.tag == "PowerAmt")
@@ -57,6 +59,7 @@ public class Bullet : MonoBehaviour
         }
         if (other.gameObject.tag == "PowerSize")
         {
+            Gun.bulletBig = true;
             other.gameObject.SetActive(false);
             //Gun.BulletResize();
             //Spawner gs = Gun.GetComponent<Spawner>();

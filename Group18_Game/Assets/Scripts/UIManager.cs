@@ -14,16 +14,16 @@ using TMPro;
 public class UIManager : MonoBehaviour
 {
 
-    public Player bulletPoints;
+    public int points;
 
-    //public Player playerStats;
+    public Player playerStats;
     public TMP_Text timeText;
     public TMP_Text pointsText;
 
     // Update is called once per frame
     void Update()
     {
-        timeText.text = "Time: "; //+ bulletPoints.lives;
-        pointsText.text = "Points: " + bulletPoints.points;
+        timeText.text = "Time: ";
+        pointsText.text = "Points: " + playerStats.points;
     }
 }

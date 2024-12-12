@@ -36,7 +36,7 @@ public class Spawner : MonoBehaviour
     }
 
     /// <summary>
-    /// Handles instantiation of 
+    /// Handles instantiation of bullets
     /// </summary>
     private void PlayerShoot()
     {
@@ -52,13 +52,12 @@ public class Spawner : MonoBehaviour
         }
     }
 
-    //continually move in same direction
-    //bullets are self-deleted after ten seconds
+
 
     /// <summary>
     /// Wait time before player can shoot again
     /// </summary>
-    /// <returns></returns>
+    /// <returns>cooldown</returns>
     IEnumerator WaitToReload()
     {
         delayBetweenShots = true;

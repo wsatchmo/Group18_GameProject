@@ -148,3 +148,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 3700490833892317584, guid: 3bec537140145da4399eec600b84c90e, type: 3}
   Gun: {fileID: 4325185797550279607, guid: 9a7f621c9b9fd6c4dba9975245c93b39, type: 3}
+  points: 0

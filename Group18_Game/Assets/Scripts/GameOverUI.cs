@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 using UnityEngine.SceneManagement;
 
 /*
@@ -15,6 +17,13 @@ using UnityEngine.SceneManagement;
 
 public class GameOverUI : MonoBehaviour
 {
+
+    public int points;
+
+    public Player playerStats;
+    public TMP_Text timeText;
+    public TMP_Text pointsText;
+
     /// <summary>
     /// Change the current scene based on the sceneIndex
     /// </summary>
@@ -23,6 +32,11 @@ public class GameOverUI : MonoBehaviour
     {
         SceneManager.LoadScene(sceneIndex);
         Debug.Log("Back to game");
+    }
+
+    void Start()
+    {
+        pointsText.text = "Final Score: " + playerStats.points;
     }
 
     /// <summary>
