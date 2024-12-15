@@ -58,6 +58,9 @@ public class Spawner : MonoBehaviour
         delayBetweenShots = false;
     }
 
+    /// <summary>
+    /// Change bullet size
+    /// </summary>
     public void BulletResize()
     {
         StartCoroutine(PowerUpResize());
@@ -65,11 +68,14 @@ public class Spawner : MonoBehaviour
 
     IEnumerator PowerUpResize()
     {
-        projectileToSpawn = projectilePrefabBig;
+        bulletBig = true;
         yield return new WaitForSeconds(5f);
-        projectileToSpawn = projectilePrefab;
+        bulletBig = false;
     }    
 
+    /// <summary>
+    /// Remove cooldown temporarily
+    /// </summary>
     public void BulletAmt()
     {
         StartCoroutine(PowerUpAmt());
@@ -84,9 +90,17 @@ public class Spawner : MonoBehaviour
 
     public void SpawnProjectile()
     {
+        if (!bulletBig)
+        {
+            Rigidbody projectile = Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation, parent);
+            projectile.velocity = transform.TransformDirection(Vector3.forward * 100);
+        } 
+        else
+        {
+            Rigidbody projectile = Instantiate(projectilePrefabBig, transform.position, projectilePrefabBig.transform.rotation, parent);
+            projectile.velocity = transform.TransformDirection(Vector3.forward * 100);
+        }
 
-        Rigidbody projectile = Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation, parent);
-        projectile.velocity = transform.TransformDirection(Vector3.forward * 100);
         
     }
 }

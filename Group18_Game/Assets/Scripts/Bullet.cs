@@ -66,6 +66,8 @@ public class Bullet : MonoBehaviour
         if (other.gameObject.tag == "PowerSize")
         {
             Gun = this.transform.parent.gameObject;
+            var GunScript = Gun.GetComponent<Spawner>();
+            GunScript.BulletResize();
             Debug.Log(Gun);
             other.gameObject.SetActive(false);
             //Gun.BulletResize();
