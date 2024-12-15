@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using TMPro;
 
 /*
  * Author: [Ben]
@@ -30,6 +32,35 @@ public class Player : MonoBehaviour
     {
         ResetPoints();
         StartCoroutine(LevelOne());
+    }
+
+    //Menu opens on 'Esc'
+    private void ExitMenu()
+    {
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            //Pop-up menu activates
+            //Game freezes?
+            PauseGame();
+                //exit button returns to scene 0
+                //resume button deactivates menu and unfreezes game
+        }
+    }
+
+    /// <summary>
+    /// Pauses game
+    /// </summary>
+    void PauseGame()
+    {
+        Time.timeScale = 0;
+    }
+
+    /// <summary>
+    /// Resumes game
+    /// </summary>
+    void ResumeGame()
+    {
+        Time.timeScale = 1;
     }
 
     //Resets points to 0
