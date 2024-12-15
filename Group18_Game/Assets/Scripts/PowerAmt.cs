@@ -9,7 +9,6 @@ using UnityEngine;
  * [Handles spawning of powerup]
  */
 
-
 public class PowerAmt : MonoBehaviour
 {
     [Header("Projectile Variables")]

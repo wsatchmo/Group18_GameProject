@@ -41,12 +41,6 @@ public class Spawner : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        
-    }
-
-
     /// <summary>
     /// Wait time before player can shoot again
     /// </summary>
@@ -100,7 +94,5 @@ public class Spawner : MonoBehaviour
             Rigidbody projectile = Instantiate(projectilePrefabBig, transform.position, projectilePrefabBig.transform.rotation, parent);
             projectile.velocity = transform.TransformDirection(Vector3.forward * 100);
         }
-
-        
     }
 }

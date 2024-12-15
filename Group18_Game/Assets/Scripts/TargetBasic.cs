@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /*
- * Author: [Satcher, Will]
+ * Author: [Ben]
  * Date created: [12/8/2024]
  * Date edited: [12/8/2024]
  * [Handles spawning of target prefabs]

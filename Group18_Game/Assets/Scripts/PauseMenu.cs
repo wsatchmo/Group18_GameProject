@@ -1,9 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
 using UnityEngine.SceneManagement;
+
+/*
+ * Author: [Satcher, Will]
+ * Date created: [12/14/2024]
+ * Date edited: [12/15/2024]
+ * [Handles UI for main scene]
+ */
 
 public class PauseMenu : MonoBehaviour
 {

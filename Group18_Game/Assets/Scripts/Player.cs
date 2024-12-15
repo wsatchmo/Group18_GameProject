@@ -29,7 +29,6 @@ public class Player : MonoBehaviour
     public bool bulletBig = false;
     public bool bulletSpray = false;
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -51,18 +50,6 @@ public class Player : MonoBehaviour
         points += score;
         Debug.Log("Player's Score: " + points);
     }
-
-    //public void BulletResize()
-    //{
-    //        StartCoroutine(PowerUpResize());
-    //}
-    //IEnumerator PowerUpResize()
-    //{
-    //    Spawner.BulletResize();
-    //    yield return new WaitForSeconds(5f);
-    //    bulletBig = false;
-    //}
-
     public void BulletAmt()
     {
         Spawner.BulletAmt();
@@ -95,12 +82,4 @@ public class Player : MonoBehaviour
         yield return new WaitForSeconds(28f);
         SceneManager.LoadScene(2);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-       
-    }
-
-
 }

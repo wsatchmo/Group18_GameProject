@@ -2,6 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * Author: [Satcher, Will]
+ * Date created: [12/10/2024]
+ * Date edited: [12/15/2024]
+ * [Handles UI for main scene]
+ */
+
 public class Bullet : MonoBehaviour
 {
 
@@ -11,11 +18,6 @@ public class Bullet : MonoBehaviour
     public GameObject Gun;
 
     public int points;
-
-    private void Start()
-    {
-
-    }
 
     //continually move in same direction
     //bullets are self-deleted after five seconds
@@ -70,13 +72,7 @@ public class Bullet : MonoBehaviour
             GunScript.BulletResize();
             Debug.Log(Gun);
             other.gameObject.SetActive(false);
-            //Gun.BulletResize();
-            //Spawner gs = Gun.GetComponent<Spawner>();
-            //gs.StartCoroutine(gs.BulletResize());
 
         }
     }
-
-
-
 }

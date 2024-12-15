@@ -12,9 +12,6 @@ using UnityEngine.SceneManagement;
 * [Handles Game Over scene management]
 */
 
-//CHANGE TO BE A SCORE DISPLAY PAGE (we dont really have game over)
-//This and Start should allow players to choose level
-
 public class GameOverUI : MonoBehaviour
 {
 
