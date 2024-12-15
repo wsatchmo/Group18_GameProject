@@ -16,6 +16,8 @@ public class Spawner : MonoBehaviour
     public Rigidbody projectilePrefabBig;
     public Rigidbody projectileToSpawn;
 
+    public Transform parent;
+
     //Powerups
     public bool bulletBig = false;
     public bool bulletAmt = false;
@@ -27,23 +29,9 @@ public class Spawner : MonoBehaviour
     /// </summary>
     private void FixedUpdate()
     {
-        PlayerShoot();
-        Debug.Log(bulletBig);
-    }
-
-    private void Update()
-    {
-        
-    }
-
-    /// <summary>
-    /// Handles instantiation of bullets
-    /// </summary>
-    private void PlayerShoot()
-    {
-        if (!delayBetweenShots)
+        if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Mouse0))
         {
-            if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Mouse0))
+            if (!delayBetweenShots || bulletAmt)
             {
                 //Debug.Log("Firing.");
                 SpawnProjectile();
@@ -53,6 +41,10 @@ public class Spawner : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        
+    }
 
 
     /// <summary>
@@ -77,9 +69,10 @@ public class Spawner : MonoBehaviour
         yield return new WaitForSeconds(5f);
         projectileToSpawn = projectilePrefab;
     }    
-    public void BulletSpray()
+
+    public void BulletAmt()
     {
-        delayBetweenShots = false;
+        StartCoroutine(PowerUpAmt());
     }
 
     IEnumerator PowerUpAmt()
@@ -92,7 +85,7 @@ public class Spawner : MonoBehaviour
     public void SpawnProjectile()
     {
 
-        Rigidbody projectile = Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
+        Rigidbody projectile = Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation, parent);
         projectile.velocity = transform.TransformDirection(Vector3.forward * 100);
         
     }

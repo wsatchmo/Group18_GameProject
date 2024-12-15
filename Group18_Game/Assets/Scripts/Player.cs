@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 /*
  * Author: [Ben]
@@ -22,6 +23,8 @@ public class Player : MonoBehaviour
     public GameObject spawnPoint3;
     public GameObject spawnPoint4;
 
+    GameObject Gun;
+
     public Spawner Spawner;
     public bool bulletBig = false;
     public bool bulletSpray = false;
@@ -32,35 +35,8 @@ public class Player : MonoBehaviour
     {
         ResetPoints();
         StartCoroutine(LevelOne());
-    }
-
-    //Menu opens on 'Esc'
-    private void ExitMenu()
-    {
-        if (Input.GetKey(KeyCode.Escape))
-        {
-            //Pop-up menu activates
-            //Game freezes?
-            PauseGame();
-                //exit button returns to scene 0
-                //resume button deactivates menu and unfreezes game
-        }
-    }
-
-    /// <summary>
-    /// Pauses game
-    /// </summary>
-    void PauseGame()
-    {
-        Time.timeScale = 0;
-    }
-
-    /// <summary>
-    /// Resumes game
-    /// </summary>
-    void ResumeGame()
-    {
-        Time.timeScale = 1;
+        Gun = this.gameObject.transform.GetChild(0).GetChild(0).gameObject;
+        Debug.Log(Gun);
     }
 
     //Resets points to 0
@@ -76,30 +52,20 @@ public class Player : MonoBehaviour
         Debug.Log("Player's Score: " + points);
     }
 
-    public void BulletResize()
-    {
-            StartCoroutine(PowerUpResize());
-    }
-    IEnumerator PowerUpResize()
-    {
-        Spawner.BulletResize();
-        yield return new WaitForSeconds(5f);
-        bulletBig = false;
-    }
+    //public void BulletResize()
+    //{
+    //        StartCoroutine(PowerUpResize());
+    //}
+    //IEnumerator PowerUpResize()
+    //{
+    //    Spawner.BulletResize();
+    //    yield return new WaitForSeconds(5f);
+    //    bulletBig = false;
+    //}
 
-    public void BulletSpray()
+    public void BulletAmt()
     {
-        if (!bulletSpray)
-        {
-            bulletSpray = true;
-            StartCoroutine(PowerUpResize());
-        }
-    }
-    IEnumerator PowerUpSpray()
-    {
-        Spawner.BulletSpray();
-        yield return new WaitForSeconds(5f);
-        bulletBig = false;
+        Spawner.BulletAmt();
     }
 
     //Timer for each level

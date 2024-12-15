@@ -6,7 +6,9 @@ public class Bullet : MonoBehaviour
 {
 
     public Player Player;
-    public Spawner Gun;
+    //public Spawner Gun;
+
+    public GameObject Gun;
 
     public int points;
 
@@ -55,12 +57,16 @@ public class Bullet : MonoBehaviour
         }
         if (other.gameObject.tag == "PowerAmt")
         {
-            Gun.BulletSpray();
+            Gun = this.transform.parent.gameObject;
+            var GunScript = Gun.GetComponent<Spawner>();
+            GunScript.BulletAmt();
+            Debug.Log(Gun);
             other.gameObject.SetActive(false);
         }
         if (other.gameObject.tag == "PowerSize")
         {
-            Gun.BulletResize();
+            Gun = this.transform.parent.gameObject;
+            Debug.Log(Gun);
             other.gameObject.SetActive(false);
             //Gun.BulletResize();
             //Spawner gs = Gun.GetComponent<Spawner>();
